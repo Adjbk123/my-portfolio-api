@@ -1,0 +1,49 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block title %}Confirmation de réception - Portfolio Armand Adjibako{% endblock %}
+
+{% block header_title %}Message reçu avec succès !{% endblock %}
+
+{% block header_subtitle %}Merci de nous avoir contactés{% endblock %}
+
+{% block content %}
+    <h2>Bonjour {{ message.nom_expediteur }} !</h2>
+    
+    <p>Nous avons bien reçu votre message concernant : <strong>"{{ message.sujet }}"</strong></p>
+    
+    <div class="highlight">
+        <p><strong>Votre message a été transmis avec succès !</strong></p>
+        <p>Nous vous répondrons dans les plus brefs délais, généralement sous 24h.</p>
+    </div>
+    
+    <h3>Résumé de votre message :</h3>
+    
+    <div class="message-box">
+        <p><strong>Sujet :</strong> {{ message.sujet }}</p>
+        <p><strong>Message :</strong></p>
+        <p>{{ message.message }}</p>
+    </div>
+    
+    <h3>En attendant ma réponse :</h3>
+    
+    <p>N'hésitez pas à explorer mon portfolio pour découvrir mes projets et compétences :</p>
+    
+    <ul>
+        <li><strong>Design & Développement Web</strong> - Sites modernes et responsives</li>
+        <li><strong>Applications Mobile</strong> - iOS et Android</li>
+        <li><strong>Solutions sur mesure</strong> - Développement backend et API</li>
+        <li><strong>Optimisation</strong> - Performance et SEO</li>
+    </ul>
+    
+    <div class="signature">
+        <p class="name">Armand S. ADJIBAKO</p>
+        <p class="title">Développeur Full Stack</p>
+        <p>contact@armandadjibako.com</p>
+        <p>Akpakpa, Cotonou, Bénin</p>
+        <p>+229 97 00 00 00</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="mailto:contact@armandadjibako.com" class="btn">Me répondre directement</a>
+    </div>
+{% endblock %}

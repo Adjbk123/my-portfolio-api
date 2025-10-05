@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio Armand Adjibako{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #80a729 0%, #1c3f39 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px 20px;
+        }
+        
+        .content h2 {
+            color: #80a729;
+            margin-top: 0;
+            font-size: 24px;
+        }
+        
+        .content h3 {
+            color: #1c3f39;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #80a729;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .message-box {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .message-box p {
+            white-space: pre-wrap;
+            margin: 0;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .signature p {
+            margin: 5px 0;
+        }
+        
+        .signature .name {
+            font-weight: bold;
+            color: #80a729;
+        }
+        
+        .signature .title {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #80a729;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background-color: #1c3f39;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>{% block header_title %}Portfolio Armand Adjibako{% endblock %}</h1>
+            <p class="subtitle">{% block header_subtitle %}Développeur Full Stack{% endblock %}</p>
+        </div>
+        
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <div class="footer">
+            <p><strong>Portfolio Armand Adjibako</strong></p>
+            <p>Développeur Full Stack - Spécialisé en Web & Mobile</p>
+            <p>📧 contact@armandadjibako.com</p>
+            <p>🌐 Akpakpa, Cotonou, Bénin</p>
+            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                Cet email a été envoyé automatiquement depuis le formulaire de contact de mon portfolio.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

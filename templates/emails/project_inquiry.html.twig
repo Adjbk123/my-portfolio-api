@@ -1,0 +1,48 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block title %}Nouvelle demande de projet - Portfolio{% endblock %}
+
+{% block header_title %}Nouvelle demande de projet !{% endblock %}
+
+{% block header_subtitle %}Un client potentiel souhaite travailler avec vous{% endblock %}
+
+{% block content %}
+    <h2>Détails de la demande</h2>
+    
+    <div class="info-box">
+        <p><strong>Nom :</strong> {{ project.nom }}</p>
+        <p><strong>Email :</strong> <a href="mailto:{{ project.email }}">{{ project.email }}</a></p>
+        <p><strong>Entreprise :</strong> {{ project.entreprise ?: 'Non spécifiée' }}</p>
+        <p><strong>Budget :</strong> {{ project.budget }}</p>
+        <p><strong>Date souhaitée :</strong> {{ project.date_souhaitee }}</p>
+        <p><strong>Type de projet :</strong> {{ project.type_projet }}</p>
+        <p><strong>Date de demande :</strong> {{ "now"|date('d/m/Y à H:i') }}</p>
+    </div>
+    
+    <h3>Description du projet :</h3>
+    
+    <div class="message-box">
+        <p>{{ project.description }}</p>
+    </div>
+    
+    <div class="highlight">
+        <p><strong>Action recommandée :</strong></p>
+        <p>Contactez rapidement ce client potentiel pour discuter de son projet.</p>
+        <p>Préparez une proposition détaillée avec un devis personnalisé.</p>
+    </div>
+    
+    <h3>Contact rapide :</h3>
+    
+    <p>Vous pouvez répondre directement à : <a href="mailto:{{ project.email }}">{{ project.email }}</a></p>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="mailto:{{ project.email }}?subject=Proposition pour votre projet: {{ project.type_projet }}" class="btn">
+            Répondre au client
+        </a>
+    </div>
+    
+    <div class="signature">
+        <p>Ce message a été envoyé automatiquement depuis votre portfolio.</p>
+        <p>N'oubliez pas de mettre à jour le statut de cette demande dans votre interface d'administration.</p>
+    </div>
+{% endblock %}

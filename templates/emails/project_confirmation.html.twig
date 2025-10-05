@@ -1,0 +1,59 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block title %}Confirmation de demande de projet - Portfolio Armand Adjibako{% endblock %}
+
+{% block header_title %}Demande de projet reçue !{% endblock %}
+
+{% block header_subtitle %}Merci pour votre intérêt{% endblock %}
+
+{% block content %}
+    <h2>Bonjour {{ project.nom }} !</h2>
+    
+    <p>Nous avons bien reçu votre demande de projet concernant : <strong>"{{ project.type_projet }}"</strong></p>
+    
+    <div class="highlight">
+        <p><strong>Votre demande a été transmise avec succès !</strong></p>
+        <p>Nous étudions votre projet et vous enverrons une proposition détaillée sous 24-48h.</p>
+    </div>
+    
+    <h3>Résumé de votre demande :</h3>
+    
+    <div class="message-box">
+        <p><strong>Type de projet :</strong> {{ project.type_projet }}</p>
+        <p><strong>Budget :</strong> {{ project.budget }}</p>
+        <p><strong>Date souhaitée :</strong> {{ project.date_souhaitee }}</p>
+        <p><strong>Description :</strong></p>
+        <p>{{ project.description }}</p>
+    </div>
+    
+    <h3>Prochaines étapes :</h3>
+    
+    <div class="info-box">
+        <p><strong>1. Analyse de votre projet</strong> - Étude approfondie de vos besoins</p>
+        <p><strong>2. Proposition détaillée</strong> - Devis personnalisé avec planning</p>
+        <p><strong>3. Discussion et ajustements</strong> - Affinage selon vos retours</p>
+        <p><strong>4. Validation et signature</strong> - Démarrage du projet</p>
+    </div>
+    
+    <h3>Mes domaines d'expertise :</h3>
+    
+    <ul>
+        <li><strong>Développement Web</strong> - Sites vitrines, e-commerce, applications web</li>
+        <li><strong>Applications Mobile</strong> - iOS, Android, applications hybrides</li>
+        <li><strong>Backend & API</strong> - Services web, bases de données, intégrations</li>
+        <li><strong>Optimisation</strong> - Performance, SEO, sécurité</li>
+        <li><strong>UI/UX Design</strong> - Interfaces modernes et intuitives</li>
+    </ul>
+    
+    <div class="signature">
+        <p class="name">Armand S. ADJIBAKO</p>
+        <p class="title">Développeur Full Stack</p>
+        <p>contact@armandadjibako.com</p>
+        <p>Akpakpa, Cotonou, Bénin</p>
+        <p>+229 97 00 00 00</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="mailto:contact@armandadjibako.com" class="btn">Me contacter directement</a>
+    </div>
+{% endblock %}
